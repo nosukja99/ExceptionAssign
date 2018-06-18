@@ -3,21 +3,25 @@ import java.util.Scanner;
 class Division {
     public static void main(String[] args) {
 
-        int a, b, result;
+        int a, b, result = 0;
 
         Scanner input = new Scanner(System.in);
         System.out.println("Input two integers");
 
         a = input.nextInt();
         b = input.nextInt();
-        while(b==0)
-        {
-            System.out.println("b should be bigger than 0");
-            System.out.println("Input a integer");
-            b = input.nextInt();
-        }
-        result = a / b;
 
-        System.out.println("Result = " + result);
+        try {
+            result = a / b;
+            System.out.println("Result = " + result);
+        }
+        catch (Exception e)
+        {
+            System.out.println("We cannot divide by 0");
+        }
+        finally {
+            System.out.println("finally block will execute.");
+        }
+
     }
 }
